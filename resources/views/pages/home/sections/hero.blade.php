@@ -1,7 +1,8 @@
-<section class="hero snap-section" id="home">
-    <div class="hero-copy" data-reveal><span class="eyebrow"><span class="status-dot"></span>Take notes. Leave the effort.</span><h1>Take notes.<br>Leave the effort.</h1><p>Effortless note-taking, designed for everyone.<br>Capture your thoughts and stay organized with ease.</p>
-    <div class="style-toolbar" aria-label="Preview heading style"><button data-style="sans" class="style-select">Style 01</button><span class="toolbar-divider"></span><button data-style="bold" aria-label="Toggle bold heading"><b>B</b></button><button data-style="italic" aria-label="Toggle italic heading"><i>I</i></button><button data-style="serif" aria-label="Toggle serif heading">T<span class="tiny">T</span></button><span class="toolbar-divider"></span><button data-style="color" class="color-button" aria-label="Toggle heading color"><span></span></button><button data-style="reset" aria-label="Reset heading style">&#8634;</button></div>
+<section class="hero hero-notes snap-section" id="home">
+    <div class="hero-copy" data-reveal><span class="eyebrow"><span class="status-dot"></span>A little less effort. A lot more clarity.</span><h1>Take notes.<br><span>Leave the effort.</span></h1><p>Effortless note-taking, designed for everyone.<br>Capture your thoughts and stay organized with ease.</p>
+
+    @include('pages.home.sections.style-toolbar')
     <div class="hero-actions"><a class="button dark" href="/notes">Find your flow</a><a class="button light" href="#how-it-works">Take a little tour</a></div><span class="hero-caption">7-day free trial.</span></div>
+    @include('pages.home.sections.hero-cards')
     <div class="mountain-scene" aria-hidden="true"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85" alt="" fetchpriority="high"><div class="mountain-fog"></div></div>
-    <div class="hero-bottom"><span>YOUR MIND, UNCLUTTERED.</span><span>01 — THE BEGINNING</span></div>
 </section>

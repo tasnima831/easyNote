@@ -9,6 +9,8 @@
 @import './shared/glass.css';
 @import './partials/buttons.css';
 @import './layouts/scroll-snap.css';
+@import './pages/hero.css';
+@import './pages/auth.css';
 
 @source '../**/*.blade.php';
 @source '../**/*.js';

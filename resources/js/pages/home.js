@@ -1,5 +1,20 @@
 import { toast } from '../shared/toast';
 
+const heroChecklist = document.querySelector('.little-list');
+if (heroChecklist) {
+    const items = [...heroChecklist.querySelectorAll('input[type="checkbox"]')];
+    const updateProgress = () => {
+        const completed = items.filter(item => item.checked).length;
+        heroChecklist.querySelector('.hero-list-progress span').style.width = `${completed / items.length * 100}%`;
+        heroChecklist.querySelector('.hero-list-status').textContent = `${completed} of ${items.length} little wins`;
+    };
+    items.forEach(item => item.addEventListener('change', updateProgress));
+    updateProgress();
+}
+document.querySelector('#hero-thought')?.addEventListener('input', () => {
+    document.querySelector('#hero-draft-status').textContent = 'Just a preview. Your workspace saves notes.';
+});
+
 document.querySelectorAll('[data-style]').forEach(button => button.addEventListener('click', () => {
     const heading = document.querySelector('.hero h1');
     const style = button.dataset.style;
@@ -33,4 +48,3 @@ document.querySelector('#waitlist-form')?.addEventListener('submit', async event
     } catch (error) { toast(error.response?.data?.message || 'Could not join right now. Please try again.'); }
     finally { submit.disabled = false; }
 });
-

@@ -1,0 +1,80 @@
+.hero.hero-notes {
+    min-height: 100svh;
+    height: 100svh;
+    background: #f0f0ed;
+    align-items: center;
+    isolation: isolate;
+}
+.hero-notes .hero-copy { padding: var(--header-height) 0 40px; width: min(590px, 48%); }
+.hero-notes .eyebrow { font-size: 10px; }
+.hero-emblem { position: relative; width: 66px; height: 66px; margin: 24px auto; border-radius: 18px; background: #fff9; border: 1px solid #fff; box-shadow: inset 0 2px 1px #fff, 0 12px 25px #303a2520; font: 62px/60px Georgia, serif; color: #3d4634; transform: rotate(-6deg); }
+.hero-emblem span { position: absolute; right: 5px; top: 4px; font: 22px Arial; }
+.hero-notes h1 { font-size: clamp(48px, 5.3vw, 82px); line-height: 1.04; margin: 20px 0; }
+.hero-notes h1 > span { color: #7a846c; }
+.hero-notes .hero-actions { margin-top: 28px; }
+.hero-notes .hero-caption { margin-top: 18px; }
+.hero-notes .style-toolbar { margin: 18px auto 0; }
+.hero-notes h1[style*="color"] > span { color: inherit; }
+.hero-note-card { position: absolute; z-index: 3; text-align: left; padding: 24px; border: 1px solid #ffffffdc; border-radius: 18px; background: #ffffffb0; box-shadow: inset 0 1px 0 #fff, 0 18px 40px #3a44221a, 0 3px 8px #30382109; backdrop-filter: blur(6px); transition: transform .3s ease, box-shadow .3s ease; }
+.hero-note-card:hover, .hero-note-card:focus-within { transform: rotate(0deg) translateY(-5px); box-shadow: 0 25px 45px #3a442229; }
+.hero-card-label { display: block; font-size: 9px; letter-spacing: 1.3px; color: #687158; font-weight: 600; }
+.quick-thought { top: 20%; left: 4%; width: 240px; transform: rotate(-8deg); background: linear-gradient(130deg, #eef0c6, #e0e5b5); border-color: #f7f9dd; }
+.note-pin { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: #687554; top: -5px; left: 50%; box-shadow: 1px 3px 4px #39442b40; }
+.quick-thought textarea { width: 100%; height: 120px; resize: none; background: transparent; border: 0; color: #414b31; font: italic 22px/1.4 Georgia, serif; margin-top: 20px; padding: 0; }
+.quick-thought textarea:focus-visible { outline: 2px solid #74815c; outline-offset: 5px; border-radius: 3px; }
+.hero-card-foot { display: block; color: #65704c; font-size: 10px; margin-top: 10px; }
+.little-list { right: 3.5%; top: 22%; width: 255px; transform: rotate(7deg); }
+.hero-note-card h2 { font-size: 23px; line-height: 1.2; letter-spacing: -.7px; margin: 18px 0; }
+.little-list label { display: flex; align-items: center; gap: 9px; margin: 14px 0; font-size: 11px; cursor: pointer; }
+.little-list input { accent-color: #75865c; width: 15px; height: 15px; }
+.little-list input:checked + span { text-decoration: line-through; color: #8c9481; }
+.hero-list-progress { height: 4px; background: #dfe4d5; border-radius: 4px; margin: 21px 0 8px; overflow: hidden; }
+.hero-list-progress span { display: block; height: 100%; width: 33.333%; background: #82976a; transition: width .25s ease; }
+.hero-list-status { color: #7b846e; font-size: 10px; }
+.idea-stack { bottom: 10%; left: 7%; width: 255px; transform: rotate(5deg); }
+.hero-note-tags { display: flex; gap: 5px; margin: 18px 0; }
+.hero-note-tags span { background: #e7ecdd; color: #5d6b4b; border-radius: 20px; padding: 6px 8px; font-size: 9px; }
+.idea-stack a { display: block; font-size: 11px; border-top: 1px solid #d8ddcf; padding-top: 15px; }
+.small-reminder { right: 4%; bottom: 14%; transform: rotate(-6deg); display: flex; gap: 14px; align-items: center; padding: 22px; }
+.reminder-spark { font-size: 44px; color: #879671; }
+.small-reminder p { font-size: 11px; margin-top: 9px; color: #636c58; }
+/* Fit the composition to laptop-height viewports, including browser zoom. */
+@media (min-width: 901px) and (max-height: 800px) {
+    .hero-notes .hero-copy { padding: 65px 0 24px; }
+    .hero-emblem { width: 48px; height: 48px; font-size: 45px; line-height: 44px; margin: 14px auto; border-radius: 13px; }
+    .hero-emblem span { font-size: 17px; }
+    .hero-notes h1 { font-size: clamp(42px, 8.2svh, 66px); margin: 14px 0; }
+    .hero-notes .hero-actions { margin-top: 18px; }
+    .hero-notes .hero-caption { margin-top: 12px; }
+    .hero-note-card { padding: 18px; }
+    .quick-thought, .little-list { top: 19%; }
+    .quick-thought textarea { height: 100px; font-size: 18px; margin-top: 12px; }
+    .hero-note-card h2 { font-size: 20px; margin: 12px 0; }
+    .little-list label { margin: 10px 0; }
+    .hero-list-progress { margin-top: 12px; }
+    .idea-stack { bottom: 8%; }
+    .small-reminder { bottom: 10%; }
+    .hero-note-tags { margin: 12px 0; }
+}
+@media (min-width: 901px) and (max-height: 600px) {
+    .hero-notes .eyebrow, .hero-emblem { display: none; }
+    .idea-stack, .small-reminder { display: none; }
+    .quick-thought, .little-list { top: 30%; }
+}
+@media (max-width: 1100px) {
+    .quick-thought { left: 2%; width: 195px; padding: 18px; }
+    .quick-thought textarea { font-size: 19px; }
+    .little-list { right: 2%; width: 215px; padding: 18px; }
+    .idea-stack { left: 3%; width: 220px; bottom: 8%; }
+    .small-reminder { right: 2%; bottom: 9%; padding: 17px; }
+}
+@media (max-width: 900px) {
+    .hero.hero-notes { height: auto; min-height: 100svh; display: flex; flex-wrap: wrap; gap: 20px; padding: 0 22px 85px; }
+    .hero-notes .hero-copy { width: 100%; padding: 120px 0 20px; }
+    .hero-notes h1 { font-size: clamp(44px, 9vw, 66px); }
+    .hero-note-card { position: relative; inset: auto; flex: 1 1 240px; max-width: 340px; transform: none; }
+    .quick-thought, .little-list { min-height: 245px; }
+    .idea-stack, .small-reminder { display: none; }
+    .hero-notes .hero-bottom { bottom: 25px; }
+    .hero-notes .hero-bottom > span:last-child { display: none; }
+}
