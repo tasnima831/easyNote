@@ -1,0 +1,99 @@
+/* Shared clear-glass surfaces throughout the site. */
+:root {
+    --glass-surface: linear-gradient(125deg, rgba(255,255,255,.25), rgba(255,255,255,.055) 55%, rgba(255,255,255,.14));
+    --glass-edge: rgba(255,255,255,.72);
+    --glass-shadow: inset 0 1px 0 rgba(255,255,255,.8), inset 0 -1px 1px rgba(255,255,255,.3), 0 5px 18px rgba(35,38,28,.09);
+}
+.button.light,
+.style-toolbar,
+.style-toolbar button,
+.eyebrow,
+.platform-card,
+.price-card,
+.price-card.featured,
+.editor-window,
+.editor-toolbar,
+.preview-sidebar,
+.billing-toggle,
+.billing-toggle button.active,
+.thought,
+.stack-note,
+.phone,
+.phone-note,
+.workspace-panel,
+.notes-sidebar,
+.search-label,
+.note-list-item.active,
+.note-filters button.active,
+.cta-section,
+.thought-art {
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-edge);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(2px) saturate(120%);
+    backdrop-filter: blur(2px) saturate(120%);
+}
+.art-tag,
+.floating-label,
+.thought-three,
+.popular,
+.toast {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(45,49,39,.8), rgba(32,35,28,.58));
+    border: 1px solid rgba(255,255,255,.35);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 -1px 0 rgba(255,255,255,.08), 0 6px 18px rgba(25,29,19,.16);
+    -webkit-backdrop-filter: blur(3px) saturate(120%);
+    backdrop-filter: blur(3px) saturate(120%);
+}
+.button.dark:hover,
+.site-header.is-scrolled .button:hover,
+.workspace-page .site-header .button:hover {
+    background: linear-gradient(120deg, rgba(255,255,255,.45), rgba(255,255,255,.08) 48%, rgba(255,255,255,.25));
+}
+.button.light:hover,
+.style-toolbar button:hover {
+    background: rgba(255,255,255,.38);
+}
+.style-toolbar {
+    border-width: 1px;
+    padding: 7px;
+    gap: 7px;
+}
+.style-toolbar button { color: #272b23; }
+.style-toolbar .color-button span { background: rgba(37,41,31,.86); }
+.hero .button { border-radius: 12px; }
+.hero .eyebrow { color: #434b35; }
+.platform-art,
+.editor-stage {
+    background: radial-gradient(ellipse at 20% 15%, rgba(255,255,255,.75), transparent 65%), linear-gradient(135deg, #e5e8dc, #f0f1eb 52%, #dfe3d5);
+}
+.platform-card:hover { box-shadow: inset 0 1px 0 #fff, 0 12px 30px rgba(53,62,38,.12); }
+.price-card.featured { border-color: rgba(126,145,95,.55); }
+.pricing {
+    background: radial-gradient(ellipse at 50% 70%, rgba(174,189,147,.23), transparent 62%);
+}
+.workspace {
+    background: radial-gradient(ellipse at 85% 25%, rgba(183,197,154,.23), transparent 60%);
+}
+.note-list-item.active,
+.note-filters button.active {
+    background: rgba(161,173,131,.24);
+    border-color: rgba(117,132,87,.22);
+}
+.preview-sidebar .selected { background: rgba(161,173,131,.2); }
+.cta-section { background-color: rgba(183,194,160,.17); }
+.cta-section .cta-spark { color: rgba(116,133,86,.25); }
+.phone-note i,
+.stack-note i { background: rgba(118,127,101,.2); }
+dialog {
+    background: linear-gradient(125deg, rgba(255,255,255,.9), rgba(245,248,237,.75));
+    border: 1px solid var(--glass-edge);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+dialog input { background: rgba(255,255,255,.4); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    dialog { background: #f4f5ee; }
+}
+

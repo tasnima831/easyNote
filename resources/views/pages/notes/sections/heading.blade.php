@@ -1,0 +1,1 @@
+<div class="workspace-heading"><div><span class="section-label">A LITTLE SPACE, ALL YOURS.</span><h1>My notes<span aria-hidden="true">&#8599;</span></h1><p>Catch a thought. See where it takes you.</p></div><button class="button dark" id="new-note">New note</button></div>

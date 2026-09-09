@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Users;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Database\Factories\UserFactory;
@@ -10,6 +10,11 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    protected static function newFactory(): UserFactory
+    {
+        return UserFactory::new();
+    }
+
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 

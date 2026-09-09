@@ -1,0 +1,1 @@
+<div class="trust-strip"><span>Small tool. <strong>Endless possibilities.</strong></span><span>&#10023; &nbsp; Your ideas, your space</span><span>&#10023; &nbsp; Beautifully distraction-free</span><span>&#10023; &nbsp; Ready when inspiration hits</span></div>
