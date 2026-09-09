@@ -1,0 +1,46 @@
+/* Snap the document so the fixed header remains outside the scroll flow. */
+html {
+    scroll-snap-type: none;
+}
+
+html.home-page {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 0;
+}
+
+.home-page main > section,
+.home-page .footer {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin-top: 0;
+}
+
+.home-page main > section {
+    min-height: 100svh;
+}
+
+.home-page main > .section,
+.home-page main > .cta-section {
+    padding-top: calc(var(--header-height) + 32px);
+}
+
+/* Keep every snap target flush with the viewport, including the hero. */
+.home-page .hero.snap-section {
+    scroll-margin-top: 0;
+}
+
+.home-page main > .cta-section {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.home-page {
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+    }
+}

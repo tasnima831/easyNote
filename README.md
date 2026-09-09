@@ -1,4 +1,4 @@
-# easyNote
+# effortNote
 
 A responsive, reference-inspired note-taking website built with Laravel/PHP, Blade HTML, plain CSS and JavaScript. Node.js and Vite build the frontend assets.
 

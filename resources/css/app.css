@@ -8,6 +8,7 @@
 @import './layouts/navigation.css';
 @import './shared/glass.css';
 @import './partials/buttons.css';
+@import './layouts/scroll-snap.css';
 
 @source '../**/*.blade.php';
 @source '../**/*.js';

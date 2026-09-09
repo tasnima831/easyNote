@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Your workspace — easyNote')
+@section('title', 'Your workspace — e̶f̶f̶o̶r̶t̶Note')
 @section('body-class', 'workspace-page')
 @section('content')
 <main class="workspace">

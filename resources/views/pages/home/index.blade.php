@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('html-class', 'home-page')
 
 @section('content')
 <main>

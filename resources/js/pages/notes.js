@@ -67,7 +67,7 @@ if (document.querySelector('.workspace')) {
         if (!notes.length) { toast('Write a little something first.'); return; }
         const content = notes.map(note => `${note.title || 'An untitled thought'}\n${'-'.repeat(30)}\n${note.body}`).join('\n\n\n');
         const url = URL.createObjectURL(new Blob([content], { type: 'text/plain;charset=utf-8' }));
-        const link = document.createElement('a'); link.href = url; link.download = `easynote-${new Date().toISOString().slice(0, 10)}.txt`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); toast('Your thoughts, ready to take with you.');
+        const link = document.createElement('a'); link.href = url; link.download = `effortnote-${new Date().toISOString().slice(0, 10)}.txt`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); toast('Your thoughts, ready to take with you.');
     });
     if (!notes.length) addNote(); else { renderList(); renderEditor(); }
 }
