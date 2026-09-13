@@ -2,6 +2,7 @@ import { toast } from '../shared/toast';
 
 if (document.querySelector('.workspace')) {
     const key = 'easynote.notes.v1';
+    const freeNoteLimit = 25;
     let notes = [];
     let storageAvailable = true;
     try {
@@ -14,12 +15,18 @@ if (document.querySelector('.workspace')) {
     const body = document.querySelector('#note-body');
     const search = document.querySelector('#note-search');
     const status = document.querySelector('#save-status');
+    const noteLimitDialog = document.querySelector('#note-limit-dialog');
+    noteLimitDialog.querySelector('#close-note-limit').addEventListener('click', () => noteLimitDialog.close());
+    noteLimitDialog.addEventListener('click', (event) => { if (event.target === noteLimitDialog) noteLimitDialog.close(); });
     const current = () => notes.find(note => note.id === activeId);
     function persist() {
         try { localStorage.setItem(key, JSON.stringify(notes)); storageAvailable = true; status.textContent = 'Saved in this browser'; }
         catch { storageAvailable = false; status.textContent = 'Not saved — export a backup'; toast('Storage is full or unavailable. Export your notes to keep them.'); }
     }
     function renderList() {
+        const newNoteButton = document.querySelector('#new-note');
+        newNoteButton.textContent = 'New note';
+        newNoteButton.title = notes.length >= freeNoteLimit ? '25-note limit reached' : '';
         const list = document.querySelector('#note-list');
         list.replaceChildren();
         const query = search.value.trim().toLowerCase();
@@ -44,6 +51,7 @@ if (document.querySelector('.workspace')) {
         status.textContent = storageAvailable ? 'Saved in this browser' : 'Not saved — export a backup'; updateCount();
     }
     function addNote() {
+        if (notes.length >= freeNoteLimit) { noteLimitDialog.showModal(); return; }
         const note = { id: crypto.randomUUID(), title: '', body: '', favorite: false, updatedAt: new Date().toISOString() };
         notes.unshift(note); activeId = note.id; filter = 'all'; search.value = '';
         document.querySelectorAll('[data-filter]').forEach(button => button.classList.toggle('active', button.dataset.filter === filter));
@@ -67,7 +75,7 @@ if (document.querySelector('.workspace')) {
         if (!notes.length) { toast('Write a little something first.'); return; }
         const content = notes.map(note => `${note.title || 'An untitled thought'}\n${'-'.repeat(30)}\n${note.body}`).join('\n\n\n');
         const url = URL.createObjectURL(new Blob([content], { type: 'text/plain;charset=utf-8' }));
-        const link = document.createElement('a'); link.href = url; link.download = `effortnote-${new Date().toISOString().slice(0, 10)}.txt`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); toast('Your thoughts, ready to take with you.');
+        const link = document.createElement('a'); link.href = url; link.download = `effortlessnote-${new Date().toISOString().slice(0, 10)}.txt`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); toast('Your thoughts, ready to take with you.');
     });
     if (!notes.length) addNote(); else { renderList(); renderEditor(); }
 }

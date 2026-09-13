@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Admin dashboard — effortNote')
+@section('title', 'Admin dashboard — effortlessNote')
 @section('body-class', 'workspace-page')
 @section('content')
 <main class="auth-page">

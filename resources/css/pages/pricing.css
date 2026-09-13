@@ -1,0 +1,8 @@
+.price-card li::before {
+    content: '✓';
+    display: inline-block;
+    width: 1.4em;
+    margin-right: 6px;
+    color: #52643d;
+    font-weight: 700;
+}

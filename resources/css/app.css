@@ -1,9 +1,11 @@
 @import 'tailwindcss';
 @import './base/global.css';
 @import './pages/home.css';
+@import './pages/pricing.css';
 @import './partials/footer.css';
 @import './shared/interactions.css';
 @import './pages/notes.css';
+@import './pages/note-limit.css';
 @import './shared/responsive.css';
 @import './layouts/navigation.css';
 @import './shared/glass.css';

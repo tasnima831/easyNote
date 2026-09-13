@@ -18,9 +18,17 @@ document.querySelector('#hero-thought')?.addEventListener('input', () => {
 document.querySelectorAll('[data-style]').forEach(button => button.addEventListener('click', () => {
     const heading = document.querySelector('.hero h1');
     const style = button.dataset.style;
-    if (style === 'reset') { heading.removeAttribute('style'); return; }
+    if (style === 'reset') {
+        heading.removeAttribute('style');
+        document.querySelector('[data-style="italic"]')?.setAttribute('aria-pressed', 'false');
+        return;
+    }
     if (style === 'bold') heading.style.fontWeight = heading.style.fontWeight === '700' ? '500' : '700';
-    if (style === 'italic') heading.style.fontStyle = heading.style.fontStyle === 'italic' ? 'normal' : 'italic';
+    if (style === 'italic') {
+        const enabled = heading.style.fontStyle !== 'italic';
+        heading.style.fontStyle = enabled ? 'italic' : 'normal';
+        button.setAttribute('aria-pressed', String(enabled));
+    }
     if (style === 'serif' || style === 'sans') heading.style.fontFamily = heading.style.fontFamily.includes('Georgia') ? '' : 'Georgia, serif';
     if (style === 'color') heading.style.color = heading.style.color ? '' : '#747b5d';
 }));

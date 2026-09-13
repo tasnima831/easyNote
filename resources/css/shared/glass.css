@@ -92,8 +92,17 @@ dialog {
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
 }
+dialog:modal {
+    position: fixed;
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    transform: translate(-50%, -50%);
+}
 dialog input { background: rgba(255,255,255,.4); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     dialog { background: #f4f5ee; }
 }
-
